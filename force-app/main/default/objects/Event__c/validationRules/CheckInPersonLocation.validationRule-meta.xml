@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckInPersonLocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(EventType__c) = &apos;In-Person&apos;
+&amp;&amp;
+ISBLANK(Location__c)</errorConditionFormula>
+    <errorDisplayField>Location__c</errorDisplayField>
+    <errorMessage>You should specify a Location for In-Person events.</errorMessage>
+</ValidationRule>

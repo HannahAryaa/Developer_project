@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "1e1ad26d-dc81-4075-beb3-2829acec0ffa",
+  "appPageId" : "5c091047-f784-41c5-b5bd-4a46b765fd2c",
+  "configurationTags" : [ ],
+  "id" : "6f1b0c9c-6bf0-44b9-b13a-f782ab80295a",
+  "label" : "Attendee List",
+  "objectApiName" : "Attendee__c",
+  "routeType" : "list-a02",
+  "type" : "route",
+  "urlPrefix" : "attendee"
+}

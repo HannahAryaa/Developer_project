@@ -1,0 +1,35 @@
+<template>
+    
+    <div if:true={recordId} class="slds-p-bottom_x-small">
+        <!-- blank area to get recordId activated -->
+    </div>
+
+    <template if:true={errors}>
+        {errors}
+    </template>
+
+    <lightning-card variant="Narrow" title="My Events" icon-name="standard:event">
+        <div class="slds-m-around_small">
+            <lightning-accordion active-section-name="Upcoming Events" allow-multiple-sections-open>
+                <lightning-accordion-section name="Upcoming Events" label="Upcoming Events">
+                    <lightning-datatable
+                        key-field="id"
+                        data={upcomingEvents}
+                        selected-rows={selectedEvents}
+                        columns={columnsList}>
+                    </lightning-datatable>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Past Events" label="Past Events">
+                    <lightning-datatable
+                        key-field="Id"
+                        data={pastEvents}
+                        show-row-number-column
+                        hide-checkbox-column
+                        columns={columnsList}>
+                    </lightning-datatable>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </lightning-card>
+
+</template>

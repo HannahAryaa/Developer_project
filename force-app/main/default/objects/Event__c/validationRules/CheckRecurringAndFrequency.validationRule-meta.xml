@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckRecurringAndFrequency</fullName>
+    <active>true</active>
+    <errorConditionFormula>(Recurring__c = true &amp;&amp; ISBLANK( TEXT(Frequency__c) ))
+||
+(Recurring__c = false &amp;&amp; NOT(ISBLANK(TEXT(Frequency__c))))</errorConditionFormula>
+    <errorDisplayField>Recurring__c</errorDisplayField>
+    <errorMessage>Please check your frequency settings.</errorMessage>
+</ValidationRule>

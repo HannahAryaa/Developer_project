@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckVirtualLocation</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT(EventType__c) = &apos;Virtual&apos;
+&amp;&amp;
+NOT(ISBLANK(Location__c))</errorConditionFormula>
+    <errorDisplayField>Location__c</errorDisplayField>
+    <errorMessage>You can not select a Location for Virtual Events.</errorMessage>
+</ValidationRule>

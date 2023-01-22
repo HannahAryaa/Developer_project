@@ -1,0 +1,27 @@
+<template>
+
+    <template if:true={errors}>
+        {errors}
+    </template>
+
+    <p>Our current recordId is {recordId}</p>
+    <p>The user has selected {selection}</p>
+    
+    <div>
+        <lightning-datatable
+            key-field="id"
+            data={events}
+            columns={columnsList}>
+        </lightning-datatable>
+
+        <br />
+        
+        <lightning-button
+            label="Handle It"
+            title="Handle It"
+            onclick={handleClick}
+            class="slds-m-left_x-small">
+        </lightning-button>
+    </div>
+
+</template>

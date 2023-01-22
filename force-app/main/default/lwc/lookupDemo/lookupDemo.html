@@ -1,0 +1,35 @@
+<template>
+
+    <lightning-card title="Custom Lookup Demo" icon-name="standard:record">
+        <div class="slds-p-around_small">
+            <c-custom-lookup
+                object-name="Event__c"
+                field-name="Name__c"
+                label="Event"
+                parent-id-field="Id"
+                icon-name="standard:event">
+            </c-custom-lookup>
+        </div>
+        
+        <div class="slds-p-around_small">
+            <c-custom-lookup
+                object-name="Attendee__c"
+                field-name="Name"
+                label="Attendee"
+                parent-id-field="Id"
+                icon-name="standard:people">
+            </c-custom-lookup>
+        </div>
+
+        <div class="slds-p-around_small">
+            <c-custom-lookup
+                object-name="Speaker__c"
+                field-name="Name"
+                label="Speaker"
+                parent-id-field="Id"
+                icon-name="standard:person_name">
+            </c-custom-lookup>
+        </div>
+    </lightning-card>
+    
+</template>

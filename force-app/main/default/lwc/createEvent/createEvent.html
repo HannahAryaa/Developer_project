@@ -1,0 +1,100 @@
+<template>
+    
+    <lightning-card variant="Narrow" title="Event Information" icon-name="standard:event">
+        <div class="slds-m-around_small">
+            <template if:true={errors}>
+                {errors}
+            </template>
+        </div>
+
+        <div class="slds-m-around_small">
+            <lightning-input
+                type="text"
+                required
+                variant="standard"
+                name="Name__c"
+                value={eventRecord.Name__c}
+                label="Name"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <c-custom-lookup
+                onselect={handleLookup}
+                object-name="EventOrganizer__c"
+                field-name="Name"
+                parent-id-field="EventOrganizer__c"
+                icon-name="standard:people"
+                label="Event Organizer">
+            </c-custom-lookup>
+
+            <br />
+
+            <lightning-input
+                type="datetime"
+                required
+                variant="standard"
+                name="StartDateTime__c"
+                label="Start Date"
+                value={eventRecord.StartDateTime__c}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input
+                type="datetime"
+                variant="standard"
+                value={eventRecord.EndDateTime__c}
+                name="EndDateTime__c"
+                label="End Date"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input
+                type="number"
+                required
+                variant="standard"
+                value={eventRecord.MaxSeats__c}
+                name="MaxSeats__c"
+                label="Max Attendees"
+                onchange={handleChange}>
+            </lightning-input>
+
+            <c-custom-lookup
+                onselect={handleLookup}
+                object-name="Location__c"
+                field-name="Name"
+                parent-id-field="Location__c"
+                icon-name="utility:location"
+                label="Event Location">
+            </c-custom-lookup>
+
+            <br />
+
+            <lightning-input-rich-text
+                variant="standard"
+                value={eventRecord.EventDetail__c}
+                name="EventDetail__c"
+                label="Event Details"
+                onchange={handleChange}>
+            </lightning-input-rich-text>
+        </div>
+
+        <div class="slds-m-around_small">
+            <lightning-button
+                label="Cancel"
+                title="Cancel"
+                onclick={handleCancel}>
+            </lightning-button>
+            
+            &nbsp; &nbsp;
+
+            <lightning-button
+                variant="brand"
+                label="Add Event"
+                title="Add Event"
+                onclick={handleClick}>
+            </lightning-button>
+
+        </div>
+    </lightning-card>
+    
+</template>
